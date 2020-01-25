@@ -14,15 +14,13 @@ SDL2/SDL.h
 SDL2/SDL_image.h
 -
 
-/home/ratanraj/CLionProjects/triangle/src/Map.cpp
-Map.h
-/home/ratanraj/CLionProjects/triangle/src/Map.h
+/home/ratanraj/CLionProjects/triangle/src/GameObject.cpp
+GameObject.h
+/home/ratanraj/CLionProjects/triangle/src/GameObject.h
 TextureManager.h
 /home/ratanraj/CLionProjects/triangle/src/TextureManager.h
 
-/home/ratanraj/CLionProjects/triangle/src/Map.h
-SDL_rect.h
--
+/home/ratanraj/CLionProjects/triangle/src/GameObject.h
 SDL_render.h
 -
 

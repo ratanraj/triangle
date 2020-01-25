@@ -6,10 +6,9 @@
 #include "Game.h"
 #include "TextureManager.h"
 #include "Map.h"
+#include "GameObject.h"
 
-SDL_Texture *playerTex;
-SDL_Rect srcR, dstR;
-
+GameObject *player;
 Map *map;
 
 SDL_Renderer* Game::renderer = nullptr;
@@ -44,16 +43,37 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         isRunning = false;
     }
 
-    playerTex = TextureManager::LoadTexture("assets/mon_right.png");
+    player = new GameObject("assets/mon.png", 0, 0);
     map = new Map();
 }
 
 void Game::handleEvents() {
     SDL_Event event;
     SDL_PollEvent(&event);
+
     switch(event.type) {
         case SDL_QUIT:
             isRunning = false;
+            break;
+        case SDL_KEYDOWN:
+            switch(event.key.keysym.sym) {
+                case SDLK_ESCAPE:
+                    isRunning = false;
+                    break;
+                case SDLK_UP:
+                    player->changeDirection(GameObject::DIR_UP);
+                    break;
+                case SDLK_DOWN:
+                    player->changeDirection(GameObject::DIR_DOWN);
+                    break;
+                case SDLK_LEFT:
+                    player->changeDirection(GameObject::DIR_LEFT);
+                    break;
+                case SDLK_RIGHT:
+                    player->changeDirection(GameObject::DIR_RIGHT);
+                    break;
+            }
+            break;
         default:
             break;
     }
@@ -61,10 +81,7 @@ void Game::handleEvents() {
 
 void Game::update() {
     cnt++;
-    dstR.h=32;
-    dstR.w = 32;
-
-    dstR.x = cnt;
+    player->Update();
 
     std::cout << cnt << std::endl;
 }
@@ -73,7 +90,7 @@ void Game::render() {
     SDL_RenderClear(renderer);
     // this is where we add stuff to render
     map->DrawMap();
-    SDL_RenderCopy(renderer, playerTex, NULL, &dstR);
+    player->Render();
 
     SDL_RenderPresent(renderer);
 }
