@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/triangle.dir/src/main.cpp.o CMakeFiles/triangle.dir/src/Game.cpp.o CMakeFiles/triangle.dir/src/TextureManager.cpp.o CMakeFiles/triangle.dir/src/Map.cpp.o CMakeFiles/triangle.dir/src/GameObject.cpp.o  -o triangle -L/usr/lib64  -lSDL2 /usr/lib64/libSDL2_image.so 

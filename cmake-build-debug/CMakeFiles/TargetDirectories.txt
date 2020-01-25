@@ -1,0 +1,3 @@
+/home/ratanraj/CLionProjects/triangle/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ratanraj/CLionProjects/triangle/cmake-build-debug/CMakeFiles/triangle.dir
+/home/ratanraj/CLionProjects/triangle/cmake-build-debug/CMakeFiles/edit_cache.dir
